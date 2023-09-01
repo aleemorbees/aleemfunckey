@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>My Product Brand Name</title>
+  <style>
+    .login-container .back-drop-image:after {
+      content: "";
+      background-image: url(https://edwardsdevqab2ccorediag.blob.core.windows.net/galaxyclo-brc/galaxylogin_files/bg-login.jpg);
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      opacity: .3;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+    }
+    .login-container .login-content .logo-image h1 {
+    color: #FFF;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 20px;
+}
+    .login-content {
+      position: absolute;
+      width: 400px;
+      top: 50%;
+      left: 50%;
+      padding: 25px 10px;
+      text-align: center;
+      border-radius: 4px;
+      background: #000;
+      z-index: 1;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .intro h2, .intro p {
+    font-size: 20px;
+    width: 80%;
+    margin: 25px auto;
+    color: #fff;
+}
+.input {
+    border: none;
+    padding: 5px 0px;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    font-weight: 500;
+}
+html body.input {
+    color: #898d8d!important;
+}
+html body.input-wrap {
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+html body.input-wrap {
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+.projectButton {
+    margin: 8px auto 0;
+    padding: 20px 0;
+    width: 55%;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    background: #39f;
+    text-align: center;
+    letter-spacing: .9px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-transform: uppercase!important;
+    font-style: 400 12px/1em "Open Sans";
+    transition: all .2s linear;
+    text-decoration: none;
+    line-height: 6px;
+}
+  </style>
+<script type="text/javascript">
+
+    function goToProperPage() {
+        var url="https://viewfindervnvadb2c.b2clogin.com/viewfindervnvadb2c.onmicrosoft.com/oauth2/v2.0/authorize?p=B2C_1_Test_IDP&client_id=88267590-279f-4562-b49e-62bfb8be5685&nonce=defaultNonce&redirect_uri=https%3A%2F%2Fvnvappgw.edwardsviewfinder.com%2FUserAuthentication%2Fget-auth-token&scope=openid&response_type=code&prompt=login";
+        var location = document.getElementById("my-dropdown").selectedIndex;
+		var email = document.getElementById("my-mail").value;
+		
+		if(email=="")
+		{
+			return false;
+		}
+        if (location == 1) {
+            url += '&domain_hint=ucla.com';
+        }
+        else if (location == 2) {
+            url += '&domain_hint=google.com';
+        }
+		else if(location == 3) {
+            url = 'https://viewfindervnvadb2c.b2clogin.com/viewfindervnvadb2c.onmicrosoft.com/b2c_1_vnv_signin/oauth2/v2.0/authorize?redirect_uri=https://vnvappgw.edwardsviewfinder.com/UserAuthentication/get-auth-token&scope=openid+profile+offline_access&client_id=88267590-279f-4562-b49e-62bfb8be5685&response_type=code&prompt=login&login_hint=ma.aleem@outlook.com&code_challenge=soHkrT4nBFowxUE7z4t7Rjm9DFk1wkROuIFMjRknBkE&code_challenge_method=S256&state=48g0549pa6g0yeqzqshki7tkxbw6zl3nxhvqpdszq1986zbp8c59f6gsuizy857j&client_info=1';
+        }else{
+		return false;
+		}
+		
+        window.location.href=url;
+    }
+
+</script>
+</head>
+
+<body>
+    <div class="login-container">
+      <div class="back-drop-image">
+        <div class="login-content">
+          <div class="logo-image">
+            <img height="90"
+              src="https://edwardsdevqab2ccorediag.blob.core.windows.net/galaxyclo-brc/galaxylogin_files/edwards-logo.png">
+            <h1 _ngcontent-lvn-c2="">Edwards</h1>
+          </div>
+          <div class="form-container">
+            <div id="api">
+              
+              <label class="block-label">Email address</label>
+              <input type="text" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Enter mail Id" formcontrolname="user_mail_id" class="input UIAT-user-emailId ng-untouched ng-pristine ng-valid" style="margin-bottom: 12px;" disabled="true" id="my-mail" name="my-mail">
+              <div class="input-wrap" style="margin-bottom: 0px;">
+                <label style="display: inline-block;" class="ng-star-inserted">Provider</label>
+                <select id="my-dropdown" name="my-dropdown"  class="input UIAT-user-emailId ng-untouched ng-pristine ng-valid" >
+ <option value="0" >Select Provider</option> 				
+				<option value="1" >Login to UCLA</option> 
+        <option value="2" >Login to Google</option> 
+        <option value="3" >Login to Microsoft</option> 
+        	</select>
+              </div>
+             
+             <button class="go-btn" type="submit" onclick="javascript:goToProperPage();"> submit </button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+
+</html>
