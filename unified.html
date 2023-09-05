@@ -3,15 +3,16 @@
 <head>
     <title>Edwards IDP</title>
 
-    <script type="text/javascript">
+    <script type="text/javascript" defer>
+ setTimeout(() => {
+        console.log("Delayed for 1 second.");
+        $(".heading h1").text("Login with IDP");
+        $( "<span class='tagline'>Tagline Goes Here</span>").insertAfter( ".heading h1" );  
+    }, "1000"); 
 
-document.addEventListener('readystatechange', event => { 
+    });
+    </script>
 
-    // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
-    if (event.target.readyState === "complete") {
-        alert("hi 2");
-    }
-});
 
 </script>
  
