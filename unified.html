@@ -5,17 +5,12 @@
 
     <script type="text/javascript">
 
-  $('div.options').each(function() {
-    var select = $(document.createElement('select')).insertBefore($(this).hide());
-    $('div.accountButton', this).each(function() {
-        var a = $(this).click(function() {
-           
-                window.location.href = this.href;
-        }),
-        option = $(document.createElement('option')).appendTo(select).val(this.href).html($(this).html()).click(function() {
-            a.click();
-        });
-    });
+document.addEventListener('readystatechange', event => { 
+
+    // When window loaded ( external resources are loaded too- `css`,`src`, etc...) 
+    if (event.target.readyState === "complete") {
+        alert("hi 2");
+    }
 });
 
 </script>
