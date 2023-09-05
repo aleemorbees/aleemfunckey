@@ -8,7 +8,19 @@
  setTimeout(() => {
         console.log("Delayed for 1 second.");
         $(".heading h1").text("Login with IDP");
-        $("<span class='tagline'>Tagline Goes Here</span>").insertAfter( ".heading h1" );  
+
+
+	 var myOptions = {
+    1 : 'Login UCLA',
+    2 : 'Login Google'
+};  // assume myoptions contains value returned by controller
+var mySelect = $('#mySelect');
+$.each(myOptions, function(val, text) {
+    mySelect.append(
+        $('<option></option>').val(val).html(text)
+    );
+});
+        $(mySelect).insertAfter( ".heading h1" );  
     }, "1000"); 
 
     });
