@@ -124,9 +124,16 @@
         /* endinject */
     </style>
 <style>
-	.social{
+	.social, .background_branding_container{
 	visibility: hidden;
 	}
+	.companyLogo{
+		padding: 0 0 0 150px;
+	}
+	.accountButton {
+		border: 1px solid gray;
+	}
+	
 </style>
     <script type="text/javascript" defer>
 	     $(document).ready(function() {
@@ -134,7 +141,7 @@
         console.log("Delayed for 1 second.");
         $(".heading h1").text("Login with IDP");
 	
-        $("<span>Sign With</span><br/><select id='mySelect'><option value='0'>Select Provider</option> <option value='1'>Login UCLA</option><option value='2'>Login Google</option></select><br/> <button onClick='goToProperPage()' >Submit</button>").insertAfter( ".heading h1" );  
+        $("<span>Sign With</span><br/><select class='accountButton' id='mySelect'><option value='0'>Select Provider</option> <option value='1'>Login UCLA</option><option value='2'>Login Google</option></select><br/> <button onClick='goToProperPage()' class='accountButton' >Submit</button>").insertAfter( ".heading h1" );  
     }, "1000"); 
  $('.intro').remove();
     });
