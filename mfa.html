@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edwards Viewfinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Open Sans !important;
+    }
+.login-container .back-drop-image:after {
+      content: "";
+      background-color: #151516;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+ } 
+ .error.itemLevel.show {
+    color: red;
+}
+div#passwordEntryMismatch {
+    color: red;
+}
+ select#countryCode {
+    max-width: 70% !important;
+    height: 36px;
+    border-radius: 5px;
+}
+input#number {
+    max-width: 65%;
+    margin-top: 12px;
+}
+label[for="countryCode"] {
+  display:none;
+}
+label[for="number"] {
+    display: none;
+}
+ .login-container .login-content .logo-image h1 {
+    color: #FFF;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.warning-msg-sms {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    opacity: 0.8;
+}
+#phoneNumbers {
+    color: #fff;
+}
+label[for=verificationCode] {
+    display: block !important;
+    color: #FFF !important;
+}
+button#sendCode {
+}
+
+.login-content {
+      position: absolute;
+      width: 400px;
+      top: 50%;
+      left: 50%;
+      padding: 25px 10px;
+      text-align: center;
+      border-radius: 4px;
+      background: #000;
+      z-index: 1;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+ h2,p {
+    font-size: 20px;
+    width: 80%;
+    margin: 25px auto;
+    color: #fff;
+}
+.login-container .login-content .form-container input {
+    border: none;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 500;
+}
+input#verificationCode {
+    width: 70%;
+    margin-left: 57Px;
+}
+.buttons #cancel {
+    margin-left: 10px;
+    display: none;
+}
+button#next, .buttons button {
+    padding: 17px 0;
+    width: 135px;
+    color: #fff;
+    cursor: pointer;
+    background: #39f;
+    text-align: center;
+    letter-spacing: .9px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-transform: uppercase!important;
+    font-style: 400 12px/1em 'Open Sans';
+    transition: all .2s linear;
+    text-decoration: none;
+    line-height: 6px;
+    margin-top: 15px;
+}
+.actionLabel #retryCode {
+    color: #3399ff;
+    text-decoration: underline;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    margin: 10px 0;
+    display: inline-block;
+}
+.number {
+    color: #fff;
+}
+
+  </style>
+</head>
+
+<body>
+    <div class="login-container">
+      <div class="back-drop-image">
+        <div class="login-content">
+          <div class="logo-image">
+            <img height="90"
+              src="./edwards-logo-new-max.png">
+          </div>
+          <div class="form-container">
+            <div id="api">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(function() {
+      $('#retryCode').text('Send a new code');
+      $('#codeVerification').append(`<p class="warning-msg-sms">If this phone number is no longer valid, contact your Local Technical Admin</p>`);
+      
+      var phoneNumberElement = document.querySelector("#phoneNumbers .number");
+      console.log(phoneNumberElement,"phoneNumberElement")
+      if(phoneNumberElement != null || phoneNumberElement != undefined)
+      {
+        var phoneNumber = phoneNumberElement.innerText; 
+        var updatePhoneNumber = phoneNumber.substring(0,8) + phoneNumber.substr(-4);
+    		//var updatePhoneNumber = phoneNumber.substring(0,8) + phoneNumber.substring(8+1);
+    		phoneNumberElement.innerText = updatePhoneNumber;	
+      }
+        
+      $('#sendCode').click(function(){
+        //location.reload();
+        //$('.phoneNumber .number').text('XXX-XXX-XXX-4803');
+          //   setTimeout(function() { 
+          //    if($('.phoneNumber .number').text()){
+          //       console.log('COming inside');
+          //       console.log($('.phoneNumber .number').text());
+          //       $('.phoneNumber .number').text('XXX-XXX-XXX-4803');
+          //      }
+          // }, 2000);   
+      }); 
+	});
+
+
+</script>
+</html>
