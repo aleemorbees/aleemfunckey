@@ -198,7 +198,8 @@ visibility: hidden;
 	   $(document).ready(function() {
     if (window.location.href.indexOf("ucla.com") > -1) {
       alert("your url contains the name ucla");
-	    $('UCLAFederation').click();
+      var button = document.getElementById("UCLAFederation");
+ 	button.click();
     }
   });
 </script>
