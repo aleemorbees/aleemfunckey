@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Edwards Viewfinder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Open Sans !important;
+    }
+    div#claimVerificationServerError {
+    color: #fff;
+}
+.login-container .back-drop-image:after {
+      content: "";
+      background-color: #151516;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      background-position: center;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+ } 
+ .error.itemLevel.show {
+    color: red;
+}
+div#passwordEntryMismatch {
+    color: red;
+}
+ select#countryCode {
+    max-width: 70% !important;
+    height: 36px;
+    border-radius: 5px;
+}
+input#number {
+    max-width: 65%;
+    margin-top: 12px;
+}
+label[for="countryCode"] {
+  display:none;
+}
+ .login-container .login-content .logo-image h1 {
+    color: #FFF;
+    margin: 0;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 20px;
+}
+.login-content {
+      position: absolute;
+      width: 400px;
+      top: 50%;
+      left: 50%;
+      padding: 25px 10px;
+      text-align: center;
+      border-radius: 4px;
+      background: #000;
+      z-index: 1;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+}
+ h2,p {
+    font-size: 20px;
+    width: 80%;
+    margin: 25px auto;
+    color: #fff;
+}
+label[for=logonIdentifier] {
+    color: #fff;
+    margin-left: 53px;
+    float: left;
+    margin-top: -12px;
+}
+label[for=email] {
+    color: #fff;
+    margin-left: 53px;
+    float: left;
+    margin-top: 18px;
+}
+label[for="number"] {
+    display: none;
+}
+label[for=password] {
+    color: #fff;
+    margin-left: 53px;
+    float: left;
+    margin-top: 41px;
+}
+a#forgotPassword {
+    margin: 2px 48px -20px 12px;
+    padding: -2px;
+    float: right;
+    color: #39f;
+}
+.error.itemLevel > p {
+    font-size: 15px !important;
+    margin: 30px 0px 0px 14px;
+    color: red;
+}
+p[role=alert] {
+    font-size: 10px;
+    color: red;
+    margin: 51px 0px 0px 3px !important;
+}
+.login-container .login-content .form-container input {
+    border: none;
+    padding: 5px 10px;
+    width: 70%;
+    border-radius: 4px;
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 500;
+}
+input#email {
+    margin-left: 10px;
+}
+.divider{
+  display: none;
+}
+.create{
+  display: none;
+}
+button#next {
+    margin: 29px auto 0;
+    padding: 16px 0;
+    width: 30%;
+    display: block;
+    color: #fff;
+    cursor: pointer;
+    background: #39f;
+    text-align: center;
+    letter-spacing: .9px;
+    border-radius: 3px;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    text-transform: uppercase!important;
+    font-style: 400 12px/1em "Open Sans";
+    transition: all .2s linear;
+    text-decoration: none;
+}
+.error.itemLevel {
+    width: 61%;
+    float: right;
+    margin-top: -11px;
+}
+.working {
+    display: block !important;
+}
+  </style>
+</head>
+
+<body>
+    <div class="login-container">
+      <div class="back-drop-image">
+        <div class="login-content">
+          <div class="logo-image">
+            <img height="90"
+              src="./edwards-logo-new-max.png">
+          </div>
+          <div class="form-container">
+            <div id="api">
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+  $(function() {
+     let itemLeval =  $('div.error.itemLevel > p').text();
+      $('input#password').attr("maxlength", "64");
+      $('input#email').attr("maxlength", "255");
+      //let document.getElementById("forgotPassword").remove();
+      let forgotPasswordLink = document.getElementById("forgotPassword")
+      var working = document.getElementsByClassName("working")[0];
+      working.appendChild(forgotPasswordLink);     
+      $("button").click(function() {
+      let itemLeval =  $('div.error.itemLevel > p').text();
+      if(itemLeval.includes("Invalid username or password. Please contact your technical administrator.")){
+        $('div.error.itemLevel > p').hide();
+        $('div.error.itemLevel > p').text() =''
+      }
+      else{
+        return true;
+      }
+      
+});
+	});
+</script>
+</html>
