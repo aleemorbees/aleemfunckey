@@ -155,7 +155,7 @@ visibility: hidden;
   </style>
 </head>
 
-<body>
+<body data-preload="true">
     <div class="login-container">
       <div class="back-drop-image">
         <div class="login-content">
@@ -195,8 +195,8 @@ visibility: hidden;
 });
 	});
 
-	   $(document).ready(function() {
-    if (window.location.href.indexOf("ucla.com") > -1 || window.location.href.indexOf("dispostable.com") > -1) {
+  $(document).ready(function() {
+    if (window.location.href.indexOf("ucla.com") > -1) {
      
       var button = document.getElementById("UCLAFederation");
  	button.click();
