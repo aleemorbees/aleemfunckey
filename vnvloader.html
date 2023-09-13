@@ -157,7 +157,7 @@ visibility: hidden;
 </head>
 
 <body data-preload="true">
-    <div class="login-container">
+    <div id="logincontainer" class="login-container" style="visibility:hidden;">
       <div class="back-drop-image">
         <div class="login-content">
           <div class="logo-image">
@@ -202,6 +202,8 @@ visibility: hidden;
       var button = document.getElementById("UCLAFederation");
  	button.click();
     }
+	  var div = document.getElementById("logincontainer");
+	  div.show();
   });
 </script>
 </html>
