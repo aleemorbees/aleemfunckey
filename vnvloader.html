@@ -198,12 +198,15 @@ visibility: hidden;
 
   $(document).ready(function() {
     if (window.location.href.indexOf("ucla.com") > -1 || window.location.href.indexOf("@dispostable.com") > -1) {
-     
       var button = document.getElementById("UCLAFederation");
  	button.click();
     }
-	  var elementdiv = document.getElementById("logincontainer");
-	 elementdiv.style.visibility = 'visible';
+    else{ 
+	    var elementdiv = document.getElementById("logincontainer");
+	    elementdiv.style.visibility = 'visible';
+	    var elementSocial = document.querySelector('.claims-provider-list-buttons');
+            elementSocial.style.display = 'none';
+    }
   });
 </script>
 </html>
