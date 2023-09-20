@@ -11,7 +11,6 @@
     div#claimVerificationServerError {
     color: #fff;
 }
-	  
 .login-container .back-drop-image:after {
       content: "";
       background-color: #151516;
@@ -156,13 +155,13 @@ visibility: hidden;
   </style>
 </head>
 
-<body data-preload="true">
-    <div class="login-container">
+<body  data-preload="true">
+    <div class="login-container" style="visibility:hidden;">
       <div class="back-drop-image">
         <div class="login-content">
           <div class="logo-image">
             <img height="90"
-              src="https://d1.awsstatic.com/case-studies/600x400_EdwardsLS_logo.be227b6edca9fef6f51ef8322b7946e3e4c0dc11.png">
+              src="./edwards-logo-new-max.png">
           </div>
           <div class="form-container">
             <div id="api">
@@ -182,7 +181,6 @@ visibility: hidden;
       let forgotPasswordLink = document.getElementById("forgotPassword")
       var working = document.getElementsByClassName("working")[0];
       working.appendChild(forgotPasswordLink);     
-	
       $("button").click(function() {
       let itemLeval =  $('div.error.itemLevel > p').text();
       if(itemLeval.includes("Invalid username or password. Please contact your technical administrator.")){
@@ -196,12 +194,19 @@ visibility: hidden;
 });
 	});
 
-  $(document).ready(function() {
-    if (window.location.href.indexOf("ucla.com") > -1 || window.location.href.indexOf("@dispostable.com") > -1) {
-     
+$(document).ready(function() {
+    if (window.location.href.indexOf("mednet.ucla.edu") > -1 ) {
+     //This buttom name is the name of OIDC created in B2C Identity provider
       var button = document.getElementById("UCLAFederation");
  	button.click();
     }
+     else{ 
+	    var elementdiv = document.querySelector('.login-container');
+	    elementdiv.style.visibility = 'visible';
+	    var elementSocial = document.querySelector('.claims-provider-list-buttons');
+            elementSocial.style.display = 'none';
+    }
   });
+
 </script>
 </html>
